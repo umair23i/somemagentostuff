@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="catalog_product_save_after">
+        <observer name="apply_watermark_after_save" instance="Custom\Watermark\Observer\ApplyWatermark" />
+    </event>
+    <event name="admin_system_config_changed_section_custom_watermark">
+        <observer name="apply_watermark_on_config_change" instance="Custom\Watermark\Observer\ApplyWatermarkOnConfigChange" />
+    </event>
+</config>

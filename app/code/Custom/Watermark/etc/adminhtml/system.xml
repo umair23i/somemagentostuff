@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config/etc/system_file.xsd">
+    <system>
+        <section id="custom_watermark" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Watermark</label>
+            <tab>general</tab>
+            <resource>Custom_Watermark::config</resource>
+            <group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Watermark Settings</label>
+                <field id="watermark_image" translate="label" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Upload Watermark (PNG only)</label>
+                    <comment>Upload a watermark image in PNG format</comment>
+                </field>
+                <field id="opacity" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Opacity</label>
+                    <comment>Set the opacity of the watermark (0-100)</comment>
+                    <validate>validate-number-range number-range-0-100</validate>
+                </field>
+                <field id="position" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Watermark Position</label>
+                    <comment>Select the position of the watermark on product images</comment>
+                    <source_model>Custom\Watermark\Model\Config\Source\Position</source_model>
+                </field>
+                <field id="width" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Width</label>
+                    <comment>Set the width of the watermark in pixels</comment>
+                    <validate>validate-number</validate>
+                </field>
+                <field id="height" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height</label>
+                    <comment>Set the height of the watermark in pixels</comment>
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
